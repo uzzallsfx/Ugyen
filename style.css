@@ -16,21 +16,21 @@
     --color-border: #DACCBF;
 }
 html{
-    height: 100%;
+    block-size: 100%;
 }
 body {
     position: relative;
     font-size: 16px;
     margin: 0;
     padding: 0;
-    height: 100%;
+    block-size: 100%;
     background-image:linear-gradient(var(--color-pink), var(--color-pink));
 }
 #wrapper{
     position: relative;
     background-color: transparent;
     background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255,1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent);
-    height:100%;
+    block-size:100%;
     background-size:80px 80px;
     overflow: hidden;
     z-index: 1;
@@ -53,10 +53,10 @@ body {
     transform: rotate(10deg) translate(20px,30px) scaleX(-1);
 }
 .content{
-    width: 100%;
+    inline-size: 100%;
     position: relative;
     display: flex;
-    padding-top: 3rem;
+    padding-block-start: 3rem;
 }
 .content .left, .content .right{
     position: relative;
@@ -66,10 +66,10 @@ body {
     align-items: center;
 }
 .content .left{
-    width: 40%;
+    inline-size: 40%;
 }
 .content .right{
-    width: 60%;
+    inline-size: 60%;
 }
 .left .btn{
     transform: scale(0);
@@ -77,7 +77,7 @@ body {
 }
 #btn__letter{
     position: relative;
-    margin-top: 30px;
+    margin-block-start: 30px;
     background-color: var(--color-text-pink);
     outline: none;
     padding: 5px 15px;
@@ -97,7 +97,7 @@ body {
     transform: scale(0.7);
 }
 #btn__letter i{
-    margin-left: 5px;
+    margin-inline-start: 5px;
 }
 #btn__letter:hover{
     border-color: var(--color-heart);
@@ -122,7 +122,7 @@ body {
 }
 .title{
     position: relative;
-    width: 100%;
+    inline-size: 100%;
     display: flex;
     justify-content: center;
     font-family: "Titan One", sans-serif;
@@ -163,20 +163,20 @@ body {
 
 .title .hat{
     position: absolute;
-    right: 45px;
-    top: -350px;
+    inset-inline-end: 45px;
+    inset-block-start: -350px;
     transform: rotate(-40deg);
     z-index: -1;
     animation: topHat 4s 7s forwards ease;
 }
 @keyframes topHat{
     20%, 30%{
-        top: -30px;
+        inset-block-start: -30px;
         transform-origin: left;
         transform: rotate(-40deg);
     }
     35%, 100%{
-        top: -30px;
+        inset-block-start: -30px;
         transform: rotate(0deg);
     }
 }
@@ -186,7 +186,7 @@ body {
     align-items: center;
     background-color: var(--color-text-pink);
     border-radius: 50px;
-    margin-top: 20px;
+    margin-block-start: 20px;
     font-family: "Sriracha", cursive;
     
 }
@@ -197,13 +197,13 @@ body {
     z-index: -1;
     opacity: 0;
     visibility: hidden;
-    width: 0px;
+    inline-size: 0px;
     animation: dateOfBirth 5s 9s forwards;
 }
 @keyframes dateOfBirth{
     20%,40%{
-        width: 0px;
-        height: 0;
+        inline-size: 0px;
+        block-size: 0;
         transform: translateY(0px);
         opacity: 1;
         visibility: visible;
@@ -212,21 +212,21 @@ body {
         transform: translateY(0px);
         opacity: 1;
         visibility: visible;
-        width: 300px;
-        height: 0px;
+        inline-size: 300px;
+        block-size: 0px;
     }
     50%,100%{
         transform: translateY(0px);
         opacity: 1;
         visibility: visible;
-        width: 300px;
-        height: 50px;
+        inline-size: 300px;
+        block-size: 50px;
     }
 }
 .name{
     position: absolute;
     padding: 0px 40px;
-    bottom: -20px;
+    inset-block-end: -20px;
     border: 3px solid var(--color-black);
 }
 .date__of__birth span, .name span{
@@ -251,8 +251,8 @@ body {
 }
 .content .right .image{
     position: relative;
-    width: 400px;
-    height: 400px;
+    inline-size: 400px;
+    block-size: 400px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -260,14 +260,14 @@ body {
     border: 6px solid var(--color-black);
 }
 .content .right .image img{
-    width: 100%;
+    inline-size: 100%;
     object-fit: cover;
 
 }
 .cricle{
     position: absolute;
-    top: 20px;
-    right: 50px;
+    inset-block-start: 20px;
+    inset-inline-end: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,8 +290,8 @@ body {
 
 }
 .text__cricle{
-    width: 100px;
-    height: 100px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--color-text-pink);
     border-radius: 50%;
     border: 5px solid var(--color-black);
@@ -306,8 +306,8 @@ body {
     }
 }
 .text__cricle span{
-    top: 0%;
-    left: 50%;
+    inset-block-start: 0%;
+    inset-inline-start: 50%;
     position: absolute;
     color: var(--color-black);
     transform: rotate(calc(var(--i) * 24deg));
@@ -332,8 +332,8 @@ body {
 }
 .right .balloon_one{
     position: absolute;
-    top: -70px;
-    left: -70px;
+    inset-block-start: -70px;
+    inset-inline-start: -70px;
     animation: balloon1 2s infinite linear;
 }
 @keyframes balloon1{
@@ -352,8 +352,8 @@ body {
 }
 .right .balloon_two{
     position: absolute;
-    top: 170px;
-    right: -65px;
+    inset-block-start: 170px;
+    inset-inline-end: -65px;
     z-index: -1;
     transform: rotate(10deg);
     animation: balloon2 2s infinite linear;
@@ -382,34 +382,34 @@ body {
             scaleStar 2s 16s infinite ease-in-out;
 }
 .decorate_star.star1{
-    width: 20px;
-    height: 20px;
-    top: 75px;
-    left: 300px;
+    inline-size: 20px;
+    block-size: 20px;
+    inset-block-start: 75px;
+    inset-inline-start: 300px;
 }
 .decorate_star.star2{
-    width: 15px;
-    height: 20px;
-    top: 35px;
-    right: 360px;
+    inline-size: 15px;
+    block-size: 20px;
+    inset-block-start: 35px;
+    inset-inline-end: 360px;
 }
 .decorate_star.star3{
-    width: 14px;
-    height: 14px;
-    top: 290px;
-    left: 630px;
+    inline-size: 14px;
+    block-size: 14px;
+    inset-block-start: 290px;
+    inset-inline-start: 630px;
 }
 .decorate_star.star4{
-    width: 18px;
-    height: 18px;
-    bottom: 60px;
-    left: 35px;
+    inline-size: 18px;
+    block-size: 18px;
+    inset-block-end: 60px;
+    inset-inline-start: 35px;
 }
 .decorate_star.star5{
-    width: 16px;
-    height: 18px;
-    bottom: 140px;
-    left: 500px;
+    inline-size: 16px;
+    block-size: 18px;
+    inset-block-end: 140px;
+    inset-inline-start: 500px;
 }
 @keyframes scaleStar {
     25%{
@@ -421,34 +421,34 @@ body {
 }
 .decorate_bottom{
     position: absolute;
-    right: 0;
-    bottom: -10px;
+    inset-inline-end: 0;
+    inset-block-end: -10px;
 }
 .decorate_flower--one{
     position: absolute;
-    top: 250px;
-    left: 50px;
+    inset-block-start: 250px;
+    inset-inline-start: 50px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
 }
 .decorate_flower--two{
     position: absolute;
-    top: 225px;
-    left: 540px;
+    inset-block-start: 225px;
+    inset-inline-start: 540px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
 }
 .decorate_flower--three{
     position: absolute;
-    top: 150px;
-    right: 235px;
+    inset-block-start: 150px;
+    inset-inline-end: 235px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
 }
 .smiley__icon{
     position: absolute;
-    bottom: 180px;
-    left: 600px;
+    inset-block-end: 180px;
+    inset-inline-start: 600px;
     transform: scale(0);
     animation: scaleCricle 3s 15s forwards ease-in-out;
 }
@@ -456,32 +456,32 @@ body {
 
 .box__letter{
     position: fixed;
-    top: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
     background-color: rgba(0,0,0,.5);
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     z-index: 10;
     display: none;
 }
 .box__letter .letter__border{
     position: absolute;
-    width: 55vw;
-    height: 450px;
+    inline-size: 55vw;
+    block-size: 450px;
     background-color: var(--color-white);
     border-radius: 27px;
     padding: 17px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    top: 50%;
-    left: 50%;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
     transform: translate(-50%,-50%);
     display: none;
 }
 .letter__border .close{
     position: absolute;
-    right: -10px;
-    top: -10px;
-    width: 30px;
+    inset-inline-end: -10px;
+    inset-block-start: -10px;
+    inline-size: 30px;
     height: 30px;
     background-color: var(--color-white);
     border-radius: 50%;
